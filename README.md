@@ -120,6 +120,11 @@ Par défaut : SifacQueryClass::QUERY_DIRECT;
 - `SIFAC_DIRECT_URL` : URL de récupération des données SIFAC+ via les CDSView (accès direct)
 
 #### *Gestion des rôles/groupes Gravitee*
+
+- `ENABLE_ROLE_CIAM` : Prise en compte ou pas du mode 'Rôles CIAM' => En théorie désactivé fin 2026
+> - ENABLE_ROLE_CIAM = false => Les rôles CIAM ne sont plus affichés, modifiables dans les différents écrans de l'application
+> - ENABLE_ROLE_CIAM = true => Les rôles CIAM sont affichés et modifiables dans les différents écrans de l'application
+
 - `CIAMROLES` : Tableau reprenant les rôles Gravitee fournis dans la fiche de raccordement.
 
 #### *Missions*

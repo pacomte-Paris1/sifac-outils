@@ -1,7 +1,5 @@
 <?php
     require_once (dirname(__FILE__) . "/../include/constants.php");
-    // require_once (dirname(__FILE__) . "/../class/LdapSearchClass.php");
-    // require_once (dirname(__FILE__) . "/../class/SifacQueryClass.php");
 
     ///////////////////////////////////////////////////
     // Configuration générale
