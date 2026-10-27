@@ -1,3 +1,13 @@
+*.txt
+/composer.lock
 /tmp/*.lck
 /tmp/*.cache
 /config/config.php
+/vendor/
+/.settings/
+/.project
+/.buildpath
+/html/javascript/functions_obsolete.js
+/html/clientsinfos.php
+/html/missionnes.php
+/html/synthesemissions.php

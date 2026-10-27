@@ -131,6 +131,3 @@ Par défaut : SifacQueryClass::QUERY_DIRECT;
 - listegroupes.php : Liste les groupes et les rôles Gravitee avec les personnes membres.
 - listeidentites.php : Liste les identités de Gravitee et affiche le détail pour l'identité sélectionnée.
 - missions.php : Liste les informations relatives aux missions de l'agent (si la mission est saisie dans SIFAC+).
-
-
-# sifac-outils
