@@ -1,0 +1,584 @@
+@charset "utf-8";
+
+/*******************************************************/
+/* DEFINITION DU BODY (Police, taille, couleur, ...)   */
+/*******************************************************/
+.bodyhtml {
+    font-size : 14px; 
+    font-family : Arial,Helvetica,Geneva,sans-serif; 
+    color : #000000; 
+    background-color: white;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/*************************************************
+/ Image de chargement
+/*************************************************/
+.waiting_div {
+	position: fixed;
+	top: 1px;
+	left: 1px;
+	height: 100%;
+	width: 100%;
+	z-index: 999999;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.waiting_img {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*************************************************
+/ Fenêtres de dialogue
+/*************************************************/
+.imagedialog {
+    vertical-align:middle; 
+    width:40px;
+    height:40px;    
+}
+
+.warningdialog {
+    border:3px solid #eb984e;
+    background-color: #fef5e7;
+    border-radius: 0.5rem; /* => coins arrondis */
+}
+
+.questiondialog {
+    border:3px solid #2e86c1;
+    background-color: #d6eaf8;
+    border-radius: 0.5rem; /* => coins arrondis */
+}
+
+/* The div Modal (background) */
+.divmodal 
+{
+    display: none; 
+    position: fixed;
+    z-index: 10000; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* The div Modal Content */
+.divmodalcontent
+{
+    width: fit-content; 
+    margin: auto; 
+    padding: 20px;
+}
+
+.divmodalheader {
+    padding: 1px 16px;
+    background-color:#3D95C5;
+    color: white;
+  }
+
+/**************************************************
+/ CSS DES DIV / FORMULAIRE
+/**************************************************/
+.divinfouser {
+    display: none;
+}
+
+.formmodifrole {
+    display: none;
+}
+
+/**************************************************
+/ CSS DES BOUTONS
+/**************************************************/
+.sifacbouton {
+    padding: 8px 8px 8px 38px;
+    margin: 2px;
+    font-size: 16px;
+    text-align: left;
+    font-family: inherit;
+    color: #00326e;
+
+    background-color : #dee4f0;  
+    border: 1px solid #00326e2b;
+    border-bottom-color: #00236e6c;
+    border-right-color: #00326e6c;
+    border-radius: 2px;
+
+    background-repeat: no-repeat;
+    background-position: top 8px left 8px;
+    background-size: 19px;
+}
+
+.sifacbouton:hover {  
+    background-color :#f5c95c; 
+}
+
+.sifacbouton:disabled,
+.sifacbouton:disabled:hover { 
+    background-color: #d0dade; 
+    opacity: 0.4; 
+}
+
+.sifacsupprbouton {
+    background-image: url("images/trash-alt-solid.svg");
+    width: 130px;
+    background-size: 17px;
+}
+
+.sifacvalidebouton {
+    background-image: url("images/saving.svg");
+    width: 130px;
+}
+
+.sifacsuivantbouton {
+    background-image: url("images/tango-right-arrow-blue.svg");
+    width: 130px;
+}
+
+.sifacenvoibouton {
+    background-image: url("images/paper-plane-solid.svg");
+    width: 130px;
+    background-size: 18px;
+}
+
+.sifacannulerbouton {
+    background-image: url("images/annuler.svg");
+    width: 130px;
+    background-size: 18px;
+}
+
+.sifacdocumentbouton {
+    background-image: url("images/documents.svg"); 
+    width: 130px;
+    background-size: 18px;
+}
+
+.sifacokbouton {
+    background-image: url("images/check.svg"); 
+    width: 130px;
+    background-size: 18px;
+}
+
+.sifacajoutbouton {
+    background-image: url("images/ajouter.svg"); 
+    width: 130px;
+    background-size: 18px;
+}
+
+.sifacmodifierbouton {
+    background-image: url("images/modifier.svg"); 
+    width: 130px;
+    background-size: 18px;
+}
+
+.sifacboutonwidthauto {
+    width : auto !important;
+}
+
+/**********************************
+// CSS format du texte
+***********************************/
+.centeraligntext {
+    text-align:center !important;
+}
+
+input[type="text"],
+input[role="combobox"] {
+    font-size:inherit;
+    font-family: inherit;
+}
+
+.warningtext {
+    background-color: #f3b885;
+}
+
+.oktext {
+    background-color: darkseagreen;
+}
+
+.redtext {
+    color: #BF3021;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.fontsize16 {
+    font-size:16px;
+}
+
+.fontsize18 {
+    font-size:18px;
+}
+
+.fontsize20 {
+    font-size:20px;
+}
+
+.fontsize22 {
+    font-size:22px;
+}
+
+/**********************************
+// CSS Modification des marges / padding / bordure
+***********************************/
+.nopadding {
+    padding: 0;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+.noborder {
+    border: none;
+}
+
+.noborder:focus {
+    outline: none;
+}
+
+/* Les input de type text en mode readonly ne peuvent pas être modifiés */
+input[type="text"][readonly]
+{
+    /* pointer-events: none; */
+    background-color: transparent;
+}
+/* Les input de type checkbox en mode readonly ne peuvent pas être sélectionnés */
+/* même chose pour les label */
+/* => Pas cliquable */
+input[type="checkbox"][readonly],
+label[readonly]
+{
+    pointer-events: none;
+    background-color: transparent;
+}
+
+/**********************************
+// CSS Modification pointer
+***********************************/
+.cursorpointer {
+    cursor: pointer;
+}
+
+.cursornone {
+    cursor: none;   
+}
+
+.cursordefault {
+    cursor: default;
+}
+
+
+/*******************************************************/
+/* Tableau simple (bordure fine, noire etc)            */
+/*******************************************************/
+.tableausimple {
+    border-width:1px; 
+    border-style:solid; 
+    border-color:#888B8A;
+    border-collapse:collapse;
+    font-size:inherit;
+    font-family: inherit;
+ }
+th[scope~="row"] {
+    text-align : left;
+    font-weight: normal;
+}
+
+.lignerole:hover {
+	background: #f5c95c8e;
+	color: black;
+}
+
+.nouvelleligne {
+    background: #93ceee;
+	color: black;
+}
+
+.cellulesimple{
+    border-width:1px;
+    border-style:solid; 
+    border-color:#888B8A;
+    padding-left:10px;
+    padding-right:10px;
+    font-weight : normal ; 
+/*	width:50%; */
+}
+.titresimple{
+    font-weight : bold ; 
+    color : #BF3021 !important; 
+    border-width:1px;
+    border-style:solid; 
+    border-color:#888B8A;
+    padding-left:10px;
+    padding-right:10px;
+    text-align : center;
+}
+
+.cellulemultiligne{
+    white-space:pre;
+}
+
+/**********************************/
+/* Modificateur de tailles        */
+/**********************************/
+.width300 {
+    width : 300px !important;
+}
+
+.widthauto {
+    width : auto !important;
+}
+
+
+/*******************************************************/
+/* DEFINITION DES MESSAGES D'ALERTE, WARNING ET INFO   */
+/*******************************************************/
+.tabmessage {
+    text-align: center;
+    vertical-align: middle;
+    border-collapse: collapse;
+    /* 	border-spacing: 1; /* Removes the cell spacing via CSS */
+    /* 	border: 1px solid white; */
+    margin-left : 5px; 	
+    margin-right : 5px; 	
+}
+
+.celerror {
+    font-size : 15px;
+    background-color: #CA433B; /* fond rouge */
+    color : #FFFFFF;			
+    font-weight: bold;
+}
+
+.imgerror {
+    width:40px;
+    height:40px;
+}
+
+.celwarning {
+    font-size : 15px;
+    background-color: #E9A33C; /* fond orange */
+    color : #444444; /* #FFFFFF;	*/
+    font-weight: bold;
+}
+
+.imgwarning {
+    width:40px;
+    height:40px;
+}
+
+.celinfo {
+    font-size : 15px;
+    background-color: #77A248;/* #5f8039; */ /* #77A248; */ /* fond vert */
+    color : #2D2D2D;/* #FFFFFF; */	/* #2D2D2D; */
+    font-weight: bold;
+}
+
+.imginfo {
+    width:40px;
+    height:40px;
+}
+
+.celllogo {
+    border-top-left-radius : 50px;
+    border-bottom-left-radius : 50px;
+    /*	padding-right : 20px; */
+    padding-left : 20px;
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.cellmsg {
+    border-top-right-radius : 50px;
+    border-bottom-right-radius : 50px;
+    padding-right : 20px;
+    padding-left : 20px;
+    padding-top : 20px;
+    padding-bottom : 20px;
+}
+
+.imgquestion {
+    width:40px;
+    height:40px;
+}
+
+.imgajout {
+    width:40px;
+    height:40px;
+}
+
+.imgsuppression {
+    width:40px;
+    height:40px;
+}
+
+.resetfont {
+    font-size : unset; 
+}
+
+/***********************************/
+/* Collapse CSS                    */
+/***********************************/
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapseactive, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapseactive:after {
+  content: "\2212";
+}
+
+.collapsecontent {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+/************************************/
+/* Select2 class                    */
+/************************************/
+.listuserciamclass {
+    width: 500px !important; 
+}
+
+/************************************************/
+/* Input, zone de sélection Select2 => on focus */
+/************************************************/
+input:focus,
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    /* border: 3px solid #830b0b; */
+	background: bisque;
+}
+
+/*************************************************/
+/* Bulles d'information (data-title / data-type) */
+/*************************************************/
+span[data-title]:hover:after,
+td[data-title]:hover:after,
+label[data-title]:hover:after,
+li[data-title]:hover:after,
+a[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+    /* font-size: initial; */
+}
+
+span[data-title]:after,
+td[data-title]:after,
+label[data-title]:after,
+li[data-title]:after,
+a[data-title]:after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -1.6em; 
+    top: 90%;
+    left: 10px;
+    padding: 4px 4px 4px 8px;
+    color: #fff;
+    white-space: pre;
+    box-shadow: 0px 0px 4px #666;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: start;
+    border-radius: 5px;
+    opacity: 0;
+    z-index: 2000;
+    visibility: hidden;
+    font-size: initial;    
+}
+
+span[data-title],
+td[data-title],
+label[data-title],
+li[data-title],
+a[data-title] {
+    position: relative;
+    /* font-size: initial; */
+}
+
+label[data-tip],
+span[data-tip],
+a[data-tip] {
+    /* display: inline-block; */
+    position: relative;
+    width: 100%;
+}
+
+label[data-tip]:hover:before,
+span[data-tip]:hover:before,
+a[data-tip]:hover:before {
+    content: attr(data-tip);
+    position: absolute;
+    padding: 0 8px;  
+    height: 28px;
+    line-height: 28px; 
+    background-color: rgba(0, 0, 0, 0.8);
+    left: -10px; 
+    top: -38px;
+    /*  font-size: 14px; */
+    border-radius: 3px; 
+    /*  border-radius: 15px; -- Permet d'arrondir les angles*/
+    white-space: nowrap;
+    color: #fff;
+    /* font-size: 11px; */
+}
+
+label[data-tip]:hover:after,
+span[data-tip]:hover:after,
+a[data-tip]:hover:after {
+    content: "";
+    position: absolute;
+    /*
+    border-top: 8px solid rgba(0, 0, 0, 0.8);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    left: 0; 
+    */
+    border-top: 8px solid rgba(0, 0, 0, 0.8);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    left: -5px; 
+    top: -10px;
+}
+
+
